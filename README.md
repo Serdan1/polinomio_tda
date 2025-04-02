@@ -87,12 +87,15 @@ Diagrama de Dependencias del Repositorio
 
 
 Explicación del Diagrama
+
+
 main.py:
 Es el punto de entrada del programa.
 
 Depende de lanzador.py para importar las funciones de operaciones y la interacción con el usuario.
 
 Ejecuta un flujo interactivo que pide polinomios y muestra resultados.
+
 
 lanzador.py:
 Actúa como un módulo de utilidades.
@@ -103,12 +106,14 @@ Define funciones independientes para suma y resta usando listas de coeficientes.
 
 Incluye pedir_polinomio para la entrada del usuario.
 
+
 Polinomio.py (Lista Enlazada):
 Representa polinomios como una lista enlazada ordenada.
 
 Depende de Nodo.py para la estructura de nodos y de DatoPolinomio.py (Versión 1) para los términos.
 
 No es usado directamente por main.py o lanzador.py en el flujo principal, pero está disponible como implementación alternativa.
+
 
 Polinomio.py (Lista Simple):
 Representa polinomios como una lista simple de términos.
@@ -117,11 +122,13 @@ Depende de DatoPolinomio.py (Versión 2) para los términos.
 
 Es usado por lanzador.py para las operaciones de suma y multiplicación.
 
+
 Nodo.py:
 Define la clase Nodo, usada exclusivamente por la versión de lista enlazada de Polinomio.py.
 
+
 DatoPolinomio.py:
-Tiene dos versiones:
+    Tiene dos versiones:
 Versión 1: Usada por la lista enlazada (Polinomio.py).
 
 Versión 2: Usada por la lista simple (Polinomio.py), con una representación legible.
