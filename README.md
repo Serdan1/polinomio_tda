@@ -47,16 +47,15 @@ Este repositorio implementa un sistema para manipular polinomios en Python media
 
 Diagrama de Dependencias del Repositorio
 
-```mermaid
 graph TD
     A[main.py] --> B[lanzador.py]
     B --> C[Polinomio.py - Lista Simple]
     C --> D[DatoPolinomio.py - Versión 2]
-    B --> E[sumar_polinomios, restar_polinomios, pedir_polinomio, multiplicar_polinomios]
+    B --> E[sumar_polinomios restar_polinomios pedir_polinomio multiplicar_polinomios]
     F[Polinomio.py - Lista Enlazada] --> G[Nodo.py]
     F --> H[DatoPolinomio.py - Versión 1]
-    F --> I[agregar_termino, modificar_termino, obtener_valor]
-    C --> J[agregar_termino, obtener_valor]
+    F --> I[agregar_termino modificar_termino obtener_valor]
+    C --> J[agregar_termino obtener_valor]
 
 Explicación del Diagrama
 
