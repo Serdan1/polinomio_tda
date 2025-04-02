@@ -47,7 +47,6 @@ Este repositorio implementa un sistema para manipular polinomios en Python media
 
 Diagrama de Dependencias del Repositorio
 
-```mermaid
 graph TD
     A[main.py] --> B[lanzador.py]
     B --> C[Polinomio.py - Lista Simple]
