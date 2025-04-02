@@ -47,44 +47,16 @@ Este repositorio implementa un sistema para manipular polinomios en Python media
 
 Diagrama de Dependencias del Repositorio
 
-[main.py]
-   |
-   |--- Usa ---> [lanzador.py]
-   |              |
-   |              |--- Importa ---> [Polinomio.py (Lista Simple)]
-   |              |                  |
-   |              |                  |--- Usa ---> [DatoPolinomio.py (Versión 2)]
-   |              |
-   |              |--- Define funciones:
-   |              |     - sumar_polinomios
-   |              |     - restar_polinomios
-   |              |     - pedir_polinomio
-   |              |     - multiplicar_polinomios
-   |
-   |--- Ejecuta programa interactivo
-
-[Polinomio.py (Lista Enlazada)]
-   |
-   |--- Usa ---> [Nodo.py]
-   |              |
-   |              |--- Define clase Nodo
-   |
-   |--- Usa ---> [DatoPolinomio.py (Versión 1)]
-   |
-   |--- Define clase Polinomio con:
-   |     - agregar_termino
-   |     - modificar_termino
-   |     - obtener_valor
-
-[Polinomio.py (Lista Simple)]
-   |
-   |--- Usa ---> [DatoPolinomio.py (Versión 2)]
-   |
-   |--- Define clase Polinomio con:
-   |     - agregar_termino
-   |     - obtener_valor
-
-
+```mermaid
+graph TD
+    A[main.py] --> B[lanzador.py]
+    B --> C[Polinomio.py - Lista Simple]
+    C --> D[DatoPolinomio.py - Versión 2]
+    B --> E[sumar_polinomios, restar_polinomios, pedir_polinomio, multiplicar_polinomios]
+    F[Polinomio.py - Lista Enlazada] --> G[Nodo.py]
+    F --> H[DatoPolinomio.py - Versión 1]
+    F --> I[agregar_termino, modificar_termino, obtener_valor]
+    C --> J[agregar_termino, obtener_valor]
 
 Explicación del Diagrama
 
