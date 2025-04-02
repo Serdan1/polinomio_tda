@@ -42,3 +42,87 @@ Resumen del Proyecto
 
 Este repositorio implementa un sistema para manipular polinomios en Python mediante dos enfoques principales: una representación basada en listas enlazadas (ordenada y estructurada) y otra basada en listas simples (más sencilla y directa). El proyecto permite agregar términos a un polinomio, modificarlos, evaluarlos para un valor dado de x, y realizar operaciones como suma, resta y multiplicación. Además, incluye un programa interactivo que pide polinomios al usuario y muestra los resultados de las operaciones básicas. Es una herramienta útil para explorar conceptos de álgebra y estructuras de datos, con un diseño modular que facilita la extensión o comparación de diferentes implementaciones.
 
+
+
+
+Diagrama de Dependencias del Repositorio
+
+[main.py]
+   |
+   |--- Usa ---> [lanzador.py]
+   |              |
+   |              |--- Importa ---> [Polinomio.py (Lista Simple)]
+   |              |                  |
+   |              |                  |--- Usa ---> [DatoPolinomio.py (Versión 2)]
+   |              |
+   |              |--- Define funciones:
+   |              |     - sumar_polinomios
+   |              |     - restar_polinomios
+   |              |     - pedir_polinomio
+   |              |     - multiplicar_polinomios
+   |
+   |--- Ejecuta programa interactivo
+
+[Polinomio.py (Lista Enlazada)]
+   |
+   |--- Usa ---> [Nodo.py]
+   |              |
+   |              |--- Define clase Nodo
+   |
+   |--- Usa ---> [DatoPolinomio.py (Versión 1)]
+   |
+   |--- Define clase Polinomio con:
+   |     - agregar_termino
+   |     - modificar_termino
+   |     - obtener_valor
+
+[Polinomio.py (Lista Simple)]
+   |
+   |--- Usa ---> [DatoPolinomio.py (Versión 2)]
+   |
+   |--- Define clase Polinomio con:
+   |     - agregar_termino
+   |     - obtener_valor
+
+
+
+Explicación del Diagrama
+main.py:
+Es el punto de entrada del programa.
+
+Depende de lanzador.py para importar las funciones de operaciones y la interacción con el usuario.
+
+Ejecuta un flujo interactivo que pide polinomios y muestra resultados.
+
+lanzador.py:
+Actúa como un módulo de utilidades.
+
+Importa la versión de Polinomio.py basada en listas simples para realizar operaciones como suma y multiplicación.
+
+Define funciones independientes para suma y resta usando listas de coeficientes.
+
+Incluye pedir_polinomio para la entrada del usuario.
+
+Polinomio.py (Lista Enlazada):
+Representa polinomios como una lista enlazada ordenada.
+
+Depende de Nodo.py para la estructura de nodos y de DatoPolinomio.py (Versión 1) para los términos.
+
+No es usado directamente por main.py o lanzador.py en el flujo principal, pero está disponible como implementación alternativa.
+
+Polinomio.py (Lista Simple):
+Representa polinomios como una lista simple de términos.
+
+Depende de DatoPolinomio.py (Versión 2) para los términos.
+
+Es usado por lanzador.py para las operaciones de suma y multiplicación.
+
+Nodo.py:
+Define la clase Nodo, usada exclusivamente por la versión de lista enlazada de Polinomio.py.
+
+DatoPolinomio.py:
+Tiene dos versiones:
+Versión 1: Usada por la lista enlazada (Polinomio.py).
+
+Versión 2: Usada por la lista simple (Polinomio.py), con una representación legible.
+
